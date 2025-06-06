@@ -18,6 +18,7 @@ export default {
   plugins: [
     peerDepsExternal(),
     postcss({
+      extract: "jjindangol.css",
       modules: true,
       minimize: true,
     }),

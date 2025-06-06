@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react/*";
 import { EyeSlash } from "../Icon";
-import TextField from "./TextField";
+import TextField from ".";
 
 const Timer = () => {
   return <span className="text-error-600">3:00</span>;

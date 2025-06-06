@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Tabs from "./Tabs";
+import Tabs from ".";
 import { Meta, StoryObj } from "@storybook/react/*";
 
 const items = [

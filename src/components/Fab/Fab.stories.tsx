@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react/*";
 
-import FloatingActionButton from "./Fab";
+import FloatingActionButton from ".";
 
 const Icon = () => {
   return (
