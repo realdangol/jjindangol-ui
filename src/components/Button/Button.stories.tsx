@@ -31,6 +31,9 @@ const meta: Meta<typeof Button> = {
       options: ["large", "medium", "small"],
       description: "버튼 크기",
     },
+    disabled: {
+      control: "boolean",
+    },
     leftIcon: {
       control: "select",
       options: ["None", "Icon"],
@@ -59,6 +62,7 @@ type Story = StoryObj<typeof Button>;
 export const Usage: Story = {
   args: {
     children: "Button",
+    disabled: false,
     onClick: action("Click"),
   },
 };

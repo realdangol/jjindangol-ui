@@ -1,5 +1,3 @@
-"use client";
-
 import { Color } from "@/types/common";
 import clsx from "clsx";
 import type { ChangeEventHandler, ComponentPropsWithoutRef, ReactNode, Ref } from "react";
