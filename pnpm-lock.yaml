@@ -111,6 +111,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      rollup:
+        specifier: ^4.43.0
+        version: 4.43.0
       rollup-plugin-analyzer:
         specifier: ^4.0.0
         version: 4.0.0
