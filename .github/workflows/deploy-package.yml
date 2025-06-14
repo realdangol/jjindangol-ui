@@ -21,8 +21,10 @@ jobs:
           node-version: 20
           cache: "pnpm"
 
-      - name: Authenticate with GitHub Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.AUTH_TOKEN }}" > ~/.npmrc
+      - name: Configure .npmrc
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.AUTH_TOKEN }}" > ~/.npmrc
+          echo "@realdangol:registry=https://npm.pkg.github.com/" >> ~/.npmrc
 
       - name: Install dependencies
         run: pnpm install
