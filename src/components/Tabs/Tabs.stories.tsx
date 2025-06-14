@@ -2,14 +2,7 @@ import React, { useState } from "react";
 
 import Tabs from ".";
 import { Meta, StoryObj } from "@storybook/react/*";
-
-const items = [
-  { value: "tab1", label: "Tab 1" },
-  { value: "tab2", label: "Tab 2" },
-  { value: "tab3", label: "Tab 3", count: 12 },
-  { value: "tab4", label: "Tab 4" },
-  { value: "tab5", label: "Tab 5" },
-];
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof Tabs> = {
   title: "common/Tabs",
@@ -36,14 +29,25 @@ const meta: Meta<typeof Tabs> = {
       description: "Tab 클릭시 호출되는 함수",
     },
   },
+  args: {
+    variant: "depth1",
+    items: [
+      { value: "tab1", label: "Tab 1" },
+      { value: "tab2", label: "Tab 2" },
+      { value: "tab3", label: "Tab 3", count: 12 },
+      { value: "tab4", label: "Tab 4" },
+      { value: "tab5", label: "Tab 5" },
+    ],
+  },
   render: (args) => {
     const [activeTab, setActiveTab] = useState("tab1");
 
     const handleTabClick = (value: string) => {
       setActiveTab(value);
+      action(`Active Tabl '${value}'`)();
     };
 
-    return <Tabs {...args} items={items} activeTab={activeTab} onTabClick={handleTabClick} />;
+    return <Tabs {...args} activeTab={activeTab} onTabClick={handleTabClick} />;
   },
 };
 
