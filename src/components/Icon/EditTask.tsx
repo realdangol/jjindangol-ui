@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import withPolymorphicIcon from './withPolymorphicIcon';
+import withPolymorphicIcon from "./withPolymorphicIcon";
 
-const Clipboard = withPolymorphicIcon(({ size }) => {
+const EditTask = withPolymorphicIcon(({ size }) => {
   return (
     <svg
       width={size}
@@ -26,21 +26,14 @@ const Clipboard = withPolymorphicIcon(({ size }) => {
         strokeLinejoin="round"
       />
       <path
-        d="M7.71484 9.42859H16.2863"
+        d="M9.42871 11.1429L14.5716 16.2857"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M7.71484 13.7143H16.2863"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M7.71484 18H16.2863"
+        d="M14.5716 11.1429L9.42871 16.2857"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -50,4 +43,4 @@ const Clipboard = withPolymorphicIcon(({ size }) => {
   );
 });
 
-export default Clipboard;
+export default EditTask;

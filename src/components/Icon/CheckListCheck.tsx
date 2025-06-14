@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import withPolymorphicIcon from './withPolymorphicIcon';
+import withPolymorphicIcon from "./withPolymorphicIcon";
 
-const ClipboardDelete = withPolymorphicIcon(({ size }) => {
+const CheckListCheck = withPolymorphicIcon(({ size }) => {
   return (
     <svg
       width={size}
@@ -26,14 +26,7 @@ const ClipboardDelete = withPolymorphicIcon(({ size }) => {
         strokeLinejoin="round"
       />
       <path
-        d="M9.42871 11.1429L14.5716 16.2857"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14.5716 11.1429L9.42871 16.2857"
+        d="M7.71484 14.5714L11.1434 17.1428L15.4291 10.2857"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -43,4 +36,4 @@ const ClipboardDelete = withPolymorphicIcon(({ size }) => {
   );
 });
 
-export default ClipboardDelete;
+export default CheckListCheck;
