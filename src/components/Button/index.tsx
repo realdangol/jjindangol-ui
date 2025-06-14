@@ -22,7 +22,7 @@ const Button = ({
     "relative flex items-center justify-center gap-1 typo-body1-medium overflow-hidden disabled:cursor-not-allowed";
 
   const variantClass = {
-    fillPrimary: "bg-brand-700 text-white disabled:bg-brand-400 hover:bg-[#D27047]",
+    fillPrimary: "bg-brand-700 text-white disabled:bg-brand-400 hover:bg-brand-800",
     fillNeutral: "bg-neutral-200 text-neutral-600",
     outlinePrimary:
       "bg-white border border-brand-700 text-brand-700 disabled:border-brand-400 disabled:text-brand-400",
