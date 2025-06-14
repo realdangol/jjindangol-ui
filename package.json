@@ -1,6 +1,6 @@
 {
   "name": "@realdangol/jjindangol-ui",
-  "version": "11111.1234.1234",
+  "version": "1.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
