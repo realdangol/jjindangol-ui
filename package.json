@@ -9,7 +9,8 @@
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "tailwind-preset.js"
   ],
   "scripts": {
     "build": "rm -rf dist && rollup -c",
