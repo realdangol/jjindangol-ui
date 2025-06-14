@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react/*";
 import Checkbox from ".";
+import { useEffect, useState } from "react";
 
 const meta: Meta<typeof Checkbox> = {
   title: "common/CheckBox",
@@ -20,9 +21,18 @@ const meta: Meta<typeof Checkbox> = {
     onChange: { action: "changed", description: "체크 상태 변경 이벤트" },
   },
   args: {
-    label: "체크박스 라벨",
+    label: "Label",
     checked: false,
     disabled: false,
+  },
+  render: (args) => {
+    const [checked, setChecked] = useState(false);
+
+    useEffect(() => {
+      setChecked(!!args.checked);
+    }, [args.checked]);
+
+    return <Checkbox {...args} checked={checked} onChange={() => setChecked(!checked)} />;
   },
 };
 
@@ -32,11 +42,7 @@ type Story = StoryObj<typeof meta>;
 
 /** 체크된 상태의 체크박스 */
 export const Checked: Story = {
-  args: {
-    label: "체크됨",
-    checked: true,
-    disabled: true,
-  },
+  args: {},
 };
 
 /** 비활성화된 상태의 체크박스 */

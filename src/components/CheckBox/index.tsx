@@ -94,7 +94,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   return (
     <label
       htmlFor={id}
-      className={`inline-flex w-[fit-content] cursor-pointer items-center gap-2 ${
+      className={`inline-flex w-[fit-content] cursor-pointer items-center gap-xs ${
         disabled ? "cursor-not-allowed" : "cursor-pointer"
       } ${className}`}
     >
