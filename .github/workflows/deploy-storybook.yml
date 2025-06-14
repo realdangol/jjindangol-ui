@@ -16,24 +16,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
           cache: "pnpm"
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Storybook
-        run: pnpm build-storybook
+      - name: Build storybook
+        run: |
+          pnpm build-storybook
+          mv ./storybook-static ./storybook
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.AUTH_TOKEN }}
-          publish_dir: ./storybook-static
-          publish_branch: gh-pages
+          publish_dir: ./storybook
