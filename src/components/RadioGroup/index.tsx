@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { v6 as uuidv6 } from "uuid";
 
 type Option = {
   label: string;
@@ -13,23 +14,22 @@ type Props = {
   options: Option[];
   direction?: "vertical" | "horizontal";
   gap?: number;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 };
 
 const RadioGroup = ({
   title,
-  name,
   value,
   options,
   direction = "vertical",
   gap = 8,
   onChange,
 }: Props) => {
+  const uuid = uuidv6();
+
   return (
     <fieldset>
-      {title && (
-        <legend className="text-body2-regular font-medium text-neutral-500 mb-1">{title}</legend>
-      )}
+      {title && <legend className={"typo-body2-medium text-neutral-500 mb-1"}>{title}</legend>}
       <div
         className={clsx("flex", direction === "vertical" && "flex-col")}
         style={{
@@ -37,32 +37,33 @@ const RadioGroup = ({
         }}
       >
         {options.map((option) => {
-          const id = `${name}-${option.value}`;
+          const id = `${uuid}-${option.label}`;
+
           return (
             <label
               key={option.value}
               htmlFor={id}
               className={clsx(
-                "inline-flex items-center gap-2",
+                "inline-flex items-center gap-xs",
                 option.disabled ? "cursor-not-allowed" : "cursor-pointer"
               )}
             >
               <input
                 type="radio"
                 id={id}
-                name={name}
+                name={option.label}
                 value={option.value}
                 checked={value === option.value}
                 onChange={() => {
                   if (!option.disabled) {
-                    onChange(option.value);
+                    onChange?.(option.value);
                   }
                 }}
                 className="sr-only"
               />
               <span
                 className={clsx(
-                  "w-4.5 h-4.5 inline-flex items-center justify-center rounded-full border-[1.5px] bg-white",
+                  "w-[18px] h-[18px] inline-flex items-center justify-center rounded-full border-[1.5px] bg-white",
                   value === option.value ? "border-brand-700" : "border-neutral-300",
                   option.disabled && "border-neutral-400"
                 )}
@@ -77,7 +78,7 @@ const RadioGroup = ({
               </span>
               <span
                 className={clsx(
-                  "text-body2-regular",
+                  "typo-body2-regular",
                   option.disabled ? "text-neutral-600" : "text-neutral-800"
                 )}
               >
