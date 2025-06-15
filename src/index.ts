@@ -5,6 +5,7 @@ export { default as Dropdown } from "./components/Dropdown/Dropdown";
 export { default as useDropdown } from "./components/Dropdown/useDropdown";
 export { default as Fab } from "./components/Fab";
 export * from "./components/Icon";
+export { default as RadioGroup } from "./components/RadioGroup";
 export { default as Select } from "./components/Select";
 export { default as Tabs } from "./components/Tabs";
 export { default as TextField } from "./components/TextField";

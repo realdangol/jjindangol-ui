@@ -1,6 +1,6 @@
 {
   "name": "@realdangol/jjindangol-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -46,7 +46,6 @@
     "@vitejs/plugin-react": "^4.4.1",
     "@vitest/browser": "^3.2.2",
     "@vitest/coverage-v8": "^3.2.2",
-    "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
