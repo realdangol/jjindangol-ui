@@ -42,7 +42,6 @@ export const Basic: StoryObj<typeof Select> = {
 
     const handleSelect = (value: string) => {
       setSelectedOption(value);
-      console.log(value);
     };
 
     return (

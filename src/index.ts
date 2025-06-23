@@ -10,3 +10,4 @@ export { default as RadioGroup } from "./components/RadioGroup";
 export { default as Select } from "./components/Select";
 export { default as Tabs } from "./components/Tabs";
 export { default as TextField } from "./components/TextField";
+export { default as Toggle } from "./components/Toggle";

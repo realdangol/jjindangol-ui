@@ -10,7 +10,17 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 
 export const Basic: StoryObj<typeof Badge> = {
-  args: {},
+  argTypes: {
+    size: {
+      description: "Badge 크기",
+    },
+    color: {
+      description: "Badge Color",
+    },
+    children: {
+      description: "Badge Text",
+    },
+  },
   render: (args) => {
     return <Badge {...args}>Text</Badge>;
   },
