@@ -140,6 +140,26 @@ module.exports = {
           lineHeight: "0.9375rem",
           fontWeight: "600",
         },
+        ".typo-element4": {
+          fontSize: "0.625rem",
+          lineHeight: "1rem",
+          fontWeight: "300",
+        },
+        ".typo-element5": {
+          fontSize: "0.625rem",
+          lineHeight: "0.9375rem",
+          fontWeight: "400",
+        },
+        ".typo-element5-bold": {
+          fontSize: "0.625rem",
+          lineHeight: "0.9375rem",
+          fontWeight: "700",
+        },
+        ".typo-element6": {
+          fontSize: "0.75rem",
+          lineHeight: "0.9375rem",
+          fontWeight: "400",
+        },
       };
 
       addUtilities(newUtilities);
