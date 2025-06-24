@@ -9,8 +9,7 @@ const meta: Meta<typeof Icon> = {
   component: Icon,
   argTypes: {
     size: {
-      control: "select",
-      options: ["16", "20", "24"],
+      control: "text",
       description: "아이콘 크기",
     },
     color: {
@@ -26,7 +25,7 @@ type Story = StoryObj<typeof Icon>;
 
 export const Usage: Story = {
   args: {
-    size: "24",
+    size: 32,
     color: "pink",
   },
 };
