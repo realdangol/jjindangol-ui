@@ -46,6 +46,7 @@ export { default as Setting } from "./Setting";
 export { default as Share } from "./Share";
 export { default as Shop } from "./Shop";
 export { default as ShoppingCart } from "./ShoppingCart";
+export { default as StamperFilled } from "./StamperFilled";
 export { default as Time } from "./Time";
 export { default as Trash } from "./Trash";
 export { default as Vehicle } from "./Vehicle";
