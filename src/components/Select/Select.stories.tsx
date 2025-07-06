@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react/*";
 import { useState } from "react";
 
 import Select from ".";
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof Select> = {
   title: "common/Select",
@@ -34,14 +35,14 @@ export const Basic: StoryObj<typeof Select> = {
         value: "Value 5",
       },
     ],
-    placeholder: "Select an option",
-    selectedOption: "Value 1",
+    placeholder: "선택해주세요.",
   },
   render: (args) => {
     const [selectedOption, setSelectedOption] = useState(args.selectedOption);
 
     const handleSelect = (value: string) => {
       setSelectedOption(value);
+      action(value)();
     };
 
     return (

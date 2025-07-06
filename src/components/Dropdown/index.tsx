@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 import { useEffect, useRef } from "react";
 import React, { createContext, useContext, useState } from "react";
 
@@ -11,6 +11,7 @@ type DropdownProps = {
 };
 
 type DropdownTriggerProps = {
+  children: ((open: boolean) => ReactElement) | ReactNode;
   triggerType?: DropdownTriggerType;
 };
 
@@ -72,14 +73,18 @@ const Dropdown = ({
   );
 };
 
-const DropdownTrigger = ({ children }: PropsWithChildren<DropdownTriggerProps>) => {
+const DropdownTrigger = ({ children }: DropdownTriggerProps) => {
   const dropdownContext = useContext(DropdownContext);
 
   if (!dropdownContext) throw Error("Dropdown 안에서 호출해주세요.");
 
-  const { triggerType, toggleList } = dropdownContext;
+  const { open, triggerType, toggleList } = dropdownContext;
 
-  return <div onClick={triggerType === "click" ? toggleList : undefined}>{children}</div>;
+  return (
+    <div onClick={triggerType === "click" ? toggleList : undefined}>
+      {typeof children === "function" ? children(open) : children}
+    </div>
+  );
 };
 
 const DropdownList = ({
